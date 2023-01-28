@@ -1,0 +1,4 @@
+#!/bin/bash
+fullf=$1
+fname=$(basename -- "$fullf")
+eval ffmpeg -i $fname -b:v 400k -qmin 0 -qmax 40 -quality good -threads 4 c$fname
